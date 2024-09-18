@@ -3,6 +3,10 @@ $gray: rgb(234, 234, 234);
 $sidebar-width: 300px;
 $header-high: 44px;
 
+li {
+	list-style: none;
+}
+
 .container {
 	display: grid;
 	grid-template-rows: $header-high calc(100vh - $header-high);
@@ -30,9 +34,57 @@ $header-high: 44px;
 }
 
 .sidebar {
-	background-color: aquamarine;
+	// background-color: aquamarine;
 	grid-row: 2/3;
 	grid-column: 1/2;
+	position: sticky;
+
+	// inside display
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px 30px;
+
+	&__middle {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 20px;
+
+		& > span {
+			display: flex;
+		}
+
+		& > h6 {
+			font-size: 22px;
+		}
+	}
+}
+
+.generic__lists,
+.project__lists {
+	& > li {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		font-size: 24px;
+		cursor: pointer;
+		padding: 10px;
+		margin: 2px 0;
+		border-radius: 4px;
+
+		&:hover {
+			background-color: $gray;
+		}
+
+		& > span {
+			display: flex;
+		}
+	}
+}
+
+.active {
+	background-color: $gray;
 }
 
 .content {
