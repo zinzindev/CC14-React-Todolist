@@ -37,9 +37,9 @@
 }
 .todo__form__buttons {
 	display: flex;
+	flex: 1;
 	justify-content: flex-end;
 	gap: 10px;
-	// flex: 1;
 
 	& > button {
 		border: none;
