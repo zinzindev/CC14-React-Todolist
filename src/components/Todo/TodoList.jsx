@@ -1,12 +1,11 @@
 import { TodoItem } from './TodoItem';
 
-export function TodoList() {
-	const mockTodo = Array.from({ length: 50 }, (el, idx) => idx + 1);
-
+export function TodoList({ todos }) {
 	return (
 		<ul>
-			{mockTodo.map((el) => (
-				<TodoItem key={el} />
+			{todos.map((todoObj) => (
+				<TodoItem key={todoObj.id} todo={todoObj} />
+				// {id: 1, task: lolemlolemlolem, status: false, due_date: 2024-09-29}
 			))}
 		</ul>
 	);
