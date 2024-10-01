@@ -14,9 +14,9 @@ export function TodoContent() {
 	// console.log(uuidv4());
 	// console.log(uuidv4());
 
-	const handleAddTodo = () => {
+	const handleAddTodo = (newTask) => {
 		// มี new todos
-		let newTodoObj = { id: uuidv4(), task: 'Do Hw', status: false, due_date: '' };
+		let newTodoObj = { id: uuidv4(), task: newTask, status: false, due_date: '' };
 
 		// สร้าง state ใหม่
 		// update state โดย new state
@@ -31,8 +31,7 @@ export function TodoContent() {
 	return (
 		<main className='content'>
 			<TodoHeader />
-			<AddTodo />
-			<button onClick={handleAddTodo}>Test Add Todo</button>
+			<AddTodo onAddTodo={handleAddTodo} />
 			<TodoList todos={todos} />
 		</main>
 	);
