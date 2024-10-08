@@ -3,6 +3,13 @@ import { HiCheck, HiPencil, HiTrash } from 'react-icons/hi';
 import { useState } from 'react';
 import { TodoForm } from './TodoForm';
 import { getFormattedDate } from '../../utils/DateUtils';
+import PropTypes from 'prop-types';
+
+TodoItem.propTypes = {
+	onAddTodo: PropTypes.func,
+	onEditTodo: PropTypes.func,
+	todo: PropTypes.oneOfType([PropTypes.object]),
+};
 
 //(todoSchema {id: 1, task: lolemlolemlolem, status: false, due_date: 2024-09-29})
 export function TodoItem({ todo, onEditTodo, onDeleteTodo }) {
